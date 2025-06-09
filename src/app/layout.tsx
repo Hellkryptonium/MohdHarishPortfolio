@@ -10,8 +10,12 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 export const metadata = {
-  title: 'MohdHarish Portfolio',
+  title: 'MohdHarishPortfolio',
   description: 'Modern 3D Animated Portfolio by Mohd Harish',
+  icons: {
+    icon: '/assets/images/fav-icon.png',
+    apple: '/assets/images/fav-icon.png',
+  },
 };
 
 export default function RootLayout({

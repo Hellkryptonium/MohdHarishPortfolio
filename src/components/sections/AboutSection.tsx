@@ -55,9 +55,10 @@ const AboutSection = () => {
               <p className="text-md md:text-lg text-foreground/80 mb-4">Creative Full-Stack Developer | 3D Enthusiast</p>
               <div className="flex justify-center md:justify-start space-x-3">
                 {/* Placeholder for social media icons */}
-                <a href="#" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4 -.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0 -1.3-3.2a4.2 4.2 0 0 0 -.1-3.2s-1.1-.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4-1.6 -3.5-1.3 -3.5-1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6.5 -.6 1.2 -.5 2V21"/></svg></a>
-                <a href="#" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0 -2-2 2 2 0 0 0 -2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
-                <a href="#" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-8 16-18 7 2 .3 4 .1 6-1C6 13 3 11 3 7c2 1 4 1 6 0-2-3-2-7 2-8 .5 2.3 2.5 4.1 5 5.2-1.3 2.3-1.2 5.1.6 7 .6.5 1.3.8 2.1.9-.9 1.2-2.5 1.9-4.3 1.9H2s.5-1.2 1.4-2.6C6.9 7.1 14.3 4 22 4z"/></svg></a>
+                <a href="https://github.com/Hellkryptonium" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-4.3 1.4 -4.3-2.5 -6-3m12 5v-3.5c0-1 .1-1.4 -.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0 -1.3-3.2a4.2 4.2 0 0 0 -.1-3.2s-1.1-.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4-1.6 -3.5-1.3 -3.5-1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6.5 -.6 1.2 -.5 2V21"/></svg></a>
+                <a href="https://www.linkedin.com/in/mohd-harish-126a58256/" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0 -2-2 2 2 0 0 0 -2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+                <a href="https://www.instagram.com/_harish999/" className="text-primary hover:text-accent transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+
               </div>
             </motion.div>
           </motion.div>
@@ -83,7 +84,7 @@ const AboutSection = () => {
               className="bg-primary hover:bg-accent text-primary-foreground font-semibold py-3 px-6 shadow-lg hover:shadow-accent/30 transition-all duration-300 text-md w-full sm:w-auto"
             >
               <motion.a
-                href="/assets/MohdHarish_Resume_Placeholder.pdf" // Replace with your actual resume path
+                href="/assets/MohdHarish_Resume.pdf" // Replace with your actual resume path
                 download
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -92,15 +93,15 @@ const AboutSection = () => {
                 <FileDown className="w-5 h-5" />
                 Download My Resume
               </motion.a>
-            </Button>
-            <Button 
+            </Button>            <Button 
               asChild
               variant="outline"
               className="border-secondary text-secondary hover:bg-secondary/10 hover:text-secondary font-semibold py-3 px-6 shadow-lg hover:shadow-secondary/20 transition-all duration-300 text-md w-full sm:w-auto"
             >
-              <Link href="/#contact" className="flex items-center gap-2">
+              <a href="mailto:harishjs1006@gmail.com?subject=Hello%20Mohd%20Harish%20-%20From%20Your%20Portfolio" className="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 Let's Connect
-              </Link>
+              </a>
             </Button>
           </div>
         </CardContent>
