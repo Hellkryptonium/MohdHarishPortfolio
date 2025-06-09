@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('https://rsms.me/inter/font-files/Inter-Bold.woff?v=3.19') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Mode Cosmic Theme */
+    --background: 240 10% 3.9%; /* Jet Black (#0D0D0D) */
+    --foreground: 0 0% 87.8%; /* Light Gray (#E0E0E0) */
+
+    --card: 240 10% 6.9%; /* Slightly lighter than background for cards */
+    --card-foreground: 0 0% 87.8%;
+
+    --popover: 240 10% 6.9%;
+    --popover-foreground: 0 0% 87.8%;
+
+    --primary: 260 100% 66.1%; /* Electric Violet (#8C52FF) */
+    --primary-foreground: 260 85.7% 97.3%; /* Adjusted for contrast */
+
+    --secondary: 0 100% 71.2%; /* Coral Red (#FF6B6B) */
+    --secondary-foreground: 0 85.7% 97.3%; /* Adjusted for contrast */
+
+    --accent: 170 100% 50%; /* Aqua Green (#00F5D4) */
+    --accent-foreground: 170 85.7% 97.3%; /* Adjusted for contrast */
+    
+    --muted: 240 4% 12%; /* Darker Muted */
+    --muted-foreground: 240 5% 50%; /* Lighter Muted Foreground */
+
+    --destructive: 0 70% 50%; /* A more vibrant destructive color */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 15%; /* Slightly lighter border */
+    --input: 240 4% 15%; /* Input background */
+    --ring: 260 100% 70%; /* Ring color, slightly lighter primary */
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), sans-serif; /* Ensure --font-inter is defined in layout.tsx */
+  }
+
+  :focus {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 2px;
+  }
+}
+
+/* Your existing custom global styles can go here or be integrated */
+/* For example, if you had specific styles for text-primary or background-dark, 
+   you might map them to shadcn's foreground/background or keep them for specific sections if they differ.
+*/
+body {
+  /* @apply bg-background-dark text-text-primary; */ /* Replaced by shadcn vars */
+  font-family: var(--font-inter), sans-serif; /* Assuming --font-inter is set in layout.tsx */
+}
+
+@keyframes flyEnvelope {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  80% { opacity: 1; transform: translateY(-60px) scale(1.2); }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.7); }
+}
+.animate-fly-envelope {
+  animation: flyEnvelope 1.2s cubic-bezier(.4,1.6,.6,1) forwards;
+}

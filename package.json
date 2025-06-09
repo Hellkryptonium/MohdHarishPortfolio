@@ -1,0 +1,52 @@
+{
+  "name": "mohdharish-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@react-three/drei": "~9.80.0",
+    "@react-three/fiber": "~8.15.0",
+    "@react-three/postprocessing": "^3.0.4",
+    "@react-three/rapier": "^1.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.16.0",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.12.0",
+    "howler": "^2.2.4",
+    "lucide-react": "^0.300.0",
+    "next": "^14.2.29",
+    "next-mdx-remote": "^5.0.0",
+    "postprocessing": "^6.37.4",
+    "react": "^18.3.1",
+    "react-chat-widget": "^3.1.4",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.49.0",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.160.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "glslify": "^7.1.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}

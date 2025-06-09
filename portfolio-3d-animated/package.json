@@ -1,0 +1,38 @@
+{
+  "name": "portfolio-3d-animated",
+  "version": "1.0.0",
+  "description": "A cool and fun 3D animated portfolio website showcasing interactive elements and smooth animations.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "portfolio",
+    "3D",
+    "animated",
+    "Next.js",
+    "Three.js",
+    "Tailwind CSS"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "three": "^0.136.0",
+    "gsap": "^3.9.1",
+    "emailjs-com": "^2.6.4",
+    "react-hook-form": "^7.0.0",
+    "tailwindcss": "^2.2.19"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.7",
+    "postcss": "^8.4.6",
+    "autoprefixer": "^10.4.2"
+  }
+}
