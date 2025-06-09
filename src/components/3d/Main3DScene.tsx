@@ -382,23 +382,27 @@ const Main3DScene: React.FC<Main3DSceneProps> = ({ audioRef }) => {
                 roughness={0.2}
               />
               {/* 3D Project Preview: spinning cube with screenshot texture */}
-              {hoveredProject === proj.title && projectPreviews[proj.title] && (
-                // Use a plane for the preview image instead of a cube for better aspect ratio
-                <mesh position={[0, 1.1, 0]} rotation={[0.5, 0.5, 0]}>
-                  <planeGeometry args={[1.2, 0.75]} />
-                  <meshStandardMaterial
-                    map={new THREE.TextureLoader().load(projectPreviews[proj.title])}
-                    emissive={proj.color}
-                    emissiveIntensity={0.25}
-                    opacity={0.98}
-                    transparent={true}
-                  />
-                  {/* Add a subtle glowing border using another slightly larger plane */}
-                  <mesh position={[0, 0, -0.01]}>
-                    <planeGeometry args={[1.28, 0.83]} />
-                    <meshBasicMaterial color={proj.color} transparent opacity={0.18} />
-                  </mesh>
-                </mesh>
+              {hoveredProject === proj.title && (
+                (() => {
+                  const imgPath = projectPreviews[proj.title] || "/assets/images/projects/alpha-preview.png";
+                  return (
+                    <mesh position={[0, 1.1, 0]} rotation={[0.5, 0.5, 0]}>
+                      <planeGeometry args={[1.2, 0.75]} />
+                      <meshStandardMaterial
+                        map={new THREE.TextureLoader().load(imgPath)}
+                        emissive={proj.color}
+                        emissiveIntensity={0.25}
+                        opacity={0.98}
+                        transparent={true}
+                      />
+                      {/* Add a subtle glowing border using another slightly larger plane */}
+                      <mesh position={[0, 0, -0.01]}>
+                        <planeGeometry args={[1.28, 0.83]} />
+                        <meshBasicMaterial color={proj.color} transparent opacity={0.18} />
+                      </mesh>
+                    </mesh>
+                  );
+                })()
               )}
               <Html
                 center
