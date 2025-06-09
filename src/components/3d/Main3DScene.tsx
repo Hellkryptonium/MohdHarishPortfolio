@@ -384,12 +384,22 @@ const Main3DScene: React.FC<Main3DSceneProps> = ({ audioRef }) => {
               {/* 3D Project Preview: spinning cube with screenshot texture */}
               {hoveredProject === proj.title && (
                 (() => {
-                  const imgPath = projectPreviews[proj.title] || "/assets/images/projects/alpha-preview.png";
+                  let imgPath = projectPreviews[proj.title];
+                  // Defensive: If imgPath is undefined or not a string, use fallback
+                  if (typeof imgPath !== 'string' || !imgPath.endsWith('.png')) {
+                    imgPath = "/assets/images/projects/alpha-preview.png";
+                  }
+                  let texture;
+                  try {
+                    texture = new THREE.TextureLoader().load(imgPath);
+                  } catch (e) {
+                    texture = undefined;
+                  }
                   return (
                     <mesh position={[0, 1.1, 0]} rotation={[0.5, 0.5, 0]}>
                       <planeGeometry args={[1.2, 0.75]} />
                       <meshStandardMaterial
-                        map={new THREE.TextureLoader().load(imgPath)}
+                        map={texture}
                         emissive={proj.color}
                         emissiveIntensity={0.25}
                         opacity={0.98}
