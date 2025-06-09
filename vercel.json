@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "public": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "ignoreCommand": "node -e \"process.exit(process.env.VERCEL_ENV !== 'production' ? 0 : 1)\""
+}
