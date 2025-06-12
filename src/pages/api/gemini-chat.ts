@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const GEMINI_API_KEY = "AIzaSyBxKtwxnowWRNtRvKifFjzmVwQWMD7Uygk";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY!;
 
 const SYSTEM_PROMPT = `
 You are a helpful AI assistant for Mohd Harish's portfolio website. Only answer questions about Mohd Harish, his skills, projects, achievements, or tell a programming joke if asked. If the question is not about Mohd Harish or programming, politely refuse to answer.

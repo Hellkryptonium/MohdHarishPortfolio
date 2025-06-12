@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/#skills', label: 'Skills' },
   { href: '/#achievements', label: 'Achievements' },
   { href: '/#contact', label: 'Contact' },
+  { href: '/blog', label: 'Blog' }, // Added Blog link
   { href: '/mascot', label: 'Mascot' }, // Added Mascot link
   { href: '/terminal', label: 'Terminal' }, // Add Terminal link
   { href: '/timeline', label: 'Timeline' }, // Add Timeline link
