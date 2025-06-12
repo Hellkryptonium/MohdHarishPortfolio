@@ -34,8 +34,8 @@ const VisitorCountFloating = () => {
       }}
       aria-label="Live visitor count"
     >
-      <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M12 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
-      {count !== null ? `Visitors: ${count}` : 'Loading...'}
+      <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M12 13c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
+      {count !== null ? `PeepsCount: ${count}` : 'Loading...'}
     </div>
   );
 };

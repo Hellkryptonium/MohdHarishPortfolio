@@ -32,13 +32,24 @@ const skillsData: SkillCategory[] = [
       { name: 'Framer Motion & GSAP', level: 'Experienced', icon: Zap },
     ],
   },
+
   {
-    category: 'Backend Development',
-    icon: Database,
+    category: 'Mobile Development',
+    icon: Code,
     skills: [
-      { name: 'Node.js & Express', level: 'Experienced', icon: Code },
-      { name: 'Python & Django/Flask', level: 'Familiar', icon: Code },
-      { name: 'REST APIs & GraphQL', level: 'Proficient', icon: Code },
+      { name: 'Flutter & Dart', level: 'Proficient', icon: Code },
+      { name: 'React Native', level: 'Familiar', icon: Code },
+      { name: 'Firebase Integration', level: 'Experienced', icon: Database },
+    ],
+  },
+
+  {
+    category: 'Data Structures & Algorithms',
+    icon: Brain,
+    skills: [
+      { name: 'C++', level: 'Intermediate', icon: Code },
+      { name: 'Java', level: 'Beginner', icon: Code },
+      { name: 'Python', level: 'Intermediate', icon: Code },
     ],
   },
   {

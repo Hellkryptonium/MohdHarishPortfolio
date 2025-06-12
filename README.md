@@ -4,7 +4,9 @@ Welcome to my vibrant and dynamic portfolio! This project showcases my personali
 
 ## 🚀 Live Demo
 
-Check out the live version here: [https://your-portfolio-url.vercel.app](https://your-portfolio-url.vercel.app)
+My Website URL: [mohdharish.xyz](mohdharish.xyz)
+
+Check out the live version here: [https://mohd-harish-portfolio.vercel.app/](https://mohd-harish-portfolio.vercel.app/)
 
 ## 🛠️ Tech Stack (2025 Edition)
 

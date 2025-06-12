@@ -12,30 +12,46 @@ import { ExternalLink, Github } from 'lucide-react';
 const projects = [
 	{
 		id: 1,
-		title: 'Project Alpha',
-		description: 'A cutting-edge web application built with Next.js and Three.js, featuring interactive 3D visualizations.',
-		imageUrl: '/assets/images/projects/alpha-preview.png', // Fixed: use actual preview image
-		liveLink: '#',
-		sourceLink: '#',
-		tags: ['Next.js', 'Three.js', 'React Three Fiber', 'Tailwind CSS'],
+		title: 'PulsePay',
+		description: 'A new payments transaction app that revolutionizes the process.',
+		imageUrl: '/assets/images/projects/PulsePay.png', // Fixed: use actual preview image
+		liveLink: 'https://pulsepay-website-23945.web.app/',
+		tags: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
 	},
 	{
 		id: 2,
-		title: 'Project Beta',
-		description: 'A mobile-first social networking platform with a focus on real-time interactions and a sleek, modern UI.',
-		imageUrl: '/assets/images/placeholders/project-beta-placeholder.png', // Updated placeholder path
-		liveLink: '#',
-		sourceLink: '#',
-		tags: ['React Native', 'Firebase', 'Node.js', 'GraphQL'],
+		title: 'GeoLoc App',
+		description: 'A GeoLocation alarm app that alerts you when you leave a specific area.',
+		imageUrl: '/assets/images/projects/GeoLocApp.png',
+		sourceLink: 'https://github.com/Hellkryptonium/GeoLocApp',
+		tags: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
 	},
 	{
 		id: 3,
-		title: 'Project Gamma',
-		description: 'An e-commerce site for a niche market, optimized for performance and user experience, with custom 3D product previews.',
-		imageUrl: '/assets/images/placeholders/project-gamma-placeholder.png', // Updated placeholder path
-		liveLink: '#',
-		sourceLink: '#',
-		tags: ['Next.js', 'Stripe', 'PostgreSQL', 'GSAP'],
+		title: 'This website (Portfolio)',
+		description: 'A modern 3D animated portfolio showcasing my skills and projects.',
+		imageUrl: '/assets/images/projects/ThisWebsiteItself.png', // Updated placeholder path
+		liveLink: 'https://mohdharish.xyz',
+		sourceLink: 'https://github.com/Hellkryptonium/MohdHarishPortfolio',
+		tags: ['Next.js', 'Three.js', 'React.js', 'React Three Fiber', 'Tailwind CSS', 'Framer Motion'],
+	},
+
+	{
+		id: 4,
+		title: 'MeAuth',
+		description: 'My personal 2FA authentication app that provides an extra layer of security.',
+		imageUrl: '/assets/images/projects/MeAuth.png',
+		sourceLink: 'https://github.com/Hellkryptonium/MeAuth',
+		tags: ['Flutter', 'Dart', 'SHA','AES-256'],
+	},
+
+	{
+		id: 5,
+		title: 'Musify',
+		description: 'A way to listen music with your friends in real-time.',
+		imageUrl: '/assets/images/projects/Musify.png',
+		sourceLink: 'https://github.com/Hellkryptonium/Musify',
+		tags: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
 	},
 ];
 

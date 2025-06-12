@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-const GITHUB_USERNAME = "mohdharish"; // Change to your GitHub username
+const GITHUB_USERNAME = "Hellkryptonium"; // Change to your GitHub username
 
 function useLatestCommits(username: string, repo?: string) {
   const [commits, setCommits] = useState<any[]>([]);

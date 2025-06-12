@@ -19,49 +19,49 @@ const HOVER_SOUND = '/assets/sounds/hover.mp3';
 
 const floatingProjects = [
   {
-    title: 'Project Alpha',
-    url: '#',
+    title: 'PulsePay',
+    url: 'https://pulsepay-website-23945.web.app/',
     position: [-4, 1.5, -2] as [number, number, number],
     color: '#8C52FF',
-    description: 'Next.js + Three.js',
+    description: 'A new way in the world for payments transaction system.',
   },
   {
-    title: 'Project Beta',
-    url: '#',
+    title: 'GeoLoc App',
+    url: 'https://github.com/Hellkryptonium/GeoLocApp',
     position: [3.5, 2.2, 1.5] as [number, number, number],
     color: '#FF6B6B',
-    description: 'React Native + Firebase',
+    description: 'A GeoLocation alarm app that alerts you when you leave a specific area.',
   },
   {
-    title: 'Project Gamma',
-    url: '#',
+    title: 'This website itself.',
+    url: 'https://www.mohdharish.xyz/',
     position: [0, -2.5, 3.5] as [number, number, number],
     color: '#00F5D4',
-    description: 'E-commerce 3D',
+    description: 'Made using a lot of 3d components and with ❤️',
   },
   {
-    title: 'Project Delta',
-    url: '#',
+    title: 'MeAuth',
+    url: 'https://github.com/Hellkryptonium/MeAuth',
     position: [-2.5, 0.5, 4] as [number, number, number],
     color: '#FFD600',
-    description: 'AI + IoT',
+    description: 'My Personal 2FA Authenticator App',
   },
   {
-    title: 'Project Omega',
-    url: '#',
+    title: 'Musify',
+    url: 'https://github.com/Hellkryptonium/Musify',
     position: [2.5, -2, -3.5] as [number, number, number],
     color: '#E0E0E0',
-    description: 'Open Source',
+    description: 'A way to listen music with your friends in real-time.',
   },
 ];
 
 // Add preview images for each project (replace with your own images in public/assets/images/projects/)
 const projectPreviews: Record<string, string> = {
-  'Project Alpha': '/assets/images/projects/alpha-preview.png',
-  'Project Beta': '/assets/images/projects/beta-preview.png',
-  'Project Gamma': '/assets/images/projects/gamma-preview.png',
-  'Project Delta': '/assets/images/projects/delta-preview.png',
-  'Project Omega': '/assets/images/projects/omega-preview.png',
+  'PulsePay': '/assets/images/projects/PulsePay.png',
+  'GeoLoc App': '/assets/images/projects/GeoLocApp.png',
+  'This website itself.': '/assets/images/projects/ThisWebsiteItself.png',
+  'MeAuth': '/assets/images/projects/MeAuth.png',
+  'Musify': '/assets/images/projects/Musify.png',
 };
 
 // Accept audioRef as a prop
@@ -271,7 +271,7 @@ const Main3DScene: React.FC<Main3DSceneProps> = ({ audioRef }) => {
           color="#8C52FF"
           anchorX="center"
           anchorY="middle"
-          font="/assets/fonts/Inter-Bold.woff" // Replace with your actual path
+          font="/assets/fonts/Inter-Bold.woff2" // Replace with your actual path
         >
           PORTFOLIO
         </Text>

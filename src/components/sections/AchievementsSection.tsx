@@ -19,36 +19,20 @@ interface Achievement {
 const achievementsData: Achievement[] = [
   {
     id: 1,
-    title: 'Innovator of the Year (Placeholder)',
-    description: 'Recognized for developing a groundbreaking (placeholder) solution that significantly improved (placeholder) efficiency by X%.',
+    title: 'Galgotias University',
+    description: 'Started College in 2024, pursuing a B.Tech in Computer Science and Engineering with a focus on Software Development.',
     year: '2024',
-    issuer: 'Tech Solutions Inc. (Placeholder)',
-    icon: Award,
+    issuer: 'Galgotias University',
   },
   {
     id: 2,
-    title: 'Top Performer - Project Titan (Placeholder)',
-    description: 'Led the (placeholder) team to successfully deliver Project Titan ahead of schedule and under budget, exceeding all KPIs.',
-    year: '2023',
-    issuer: 'Global Corp Ltd. (Placeholder)',
+    title: 'Entrepreneur',
+    description: 'Build an amazing payment transfer app called PulsePay, which revolutionizes the payments transaction process.',
+    year: '2025',
+    issuer: 'Myself',
     icon: Star,
   },
-  {
-    id: 3,
-    title: 'Community Contribution Award (Placeholder)',
-    description: 'Awarded for significant contributions to the open-source (placeholder) community, including major feature developments and mentorship.',
-    year: '2023',
-    issuer: 'Open Source Foundation (Placeholder)',
-    icon: Zap,
-  },
-  {
-    id: 4,
-    title: 'Hackathon Winner - Future Tech Challenge (Placeholder)',
-    description: 'First place in the annual Future Tech Challenge for creating an innovative (placeholder) application using AI and IoT.',
-    year: '2022',
-    issuer: 'Future Tech Events (Placeholder)',
-    icon: Trophy,
-  },
+  
 ];
 
 const cardVariants = {
