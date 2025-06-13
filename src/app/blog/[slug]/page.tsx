@@ -8,6 +8,8 @@ import { Card } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import * as THREE from 'three';
+import { supabase } from '@/utils/supabaseClient';
+import { marked } from 'marked';
 
 // Simple 3D model for embedding
 function CubeModel() {
@@ -48,55 +50,60 @@ function CubeModel() {
 }
 
 export default function BlogPostPage({ params }) {
+  // Decode URL-encoded slug to handle spaces
   const { slug } = params;
-  
-  // Normally this would come from a CMS or file system
-  const post = {
-    title: 'Building 3D Websites with React Three Fiber',
-    date: '2025-06-01',
-    author: 'Mohd Harish',
-    content: `
-# Building 3D Websites with React Three Fiber
+  const decodedSlug = decodeURIComponent(slug);
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-In this post, we'll explore how to create immersive 3D experiences on the web using React Three Fiber and Next.js.
+  useEffect(() => {
+    async function fetchPost() {
+      const { data, error } = await supabase.from('posts').select('*').eq('slug', decodedSlug).single();
+      console.log('Fetching post:', decodedSlug, data, error);
+      
+      // Process the post data
+      if (data) {
+        // Extract tags using our utility function
+        const tags = extractTags(data.tags);
+        setPost({
+          ...data,
+          tags
+        });
+      } else {
+        setPost(null);
+      }
+      
+      setLoading(false);
+    }
+    fetchPost();
+  }, [decodedSlug]);
 
-## Getting Started
-
-React Three Fiber (R3F) is a React renderer for Three.js, making it easier to build 3D graphics with a component-based approach.
-
-## Interactive 3D Example
-
-Below is an interactive 3D model that you can rotate and zoom:
-
-## Code Example
-
-Here's how to create a simple 3D scene with React Three Fiber:
-
-\`\`\`jsx
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-
-function Scene() {
-  return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <pointLight position={[10, 10, 10]} />
-      <mesh>
-        <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color="#8C52FF" />
-      </mesh>
-      <OrbitControls />
-    </Canvas>
-  );
-}
-\`\`\`
-
-## Conclusion
-
-3D web experiences open up new possibilities for engagement and interactivity in your projects.
-    `,
+  // Function to extract tags from various formats - identical to blog list page
+  const extractTags = (input: any): string[] => {
+    // Handle clean array format ["Test","Test","Test"]
+    if (Array.isArray(input) && input.every(item => typeof item === 'string')) {
+      return Array.from(new Set(input.map(tag => tag.trim())));
+    }
+    
+    // Try parsing if it's a string that looks like an array
+    if (typeof input === 'string' && input.trim().startsWith('[') && input.trim().endsWith(']')) {
+      try {
+        const parsed = JSON.parse(input);
+        if (Array.isArray(parsed)) {
+          return Array.from(new Set(parsed.map(tag => String(tag).trim())));
+        }
+      } catch (e) {
+        // Silently fail and continue to next method
+      }
+    }
+    
+    // Return empty array for any other format
+    return [];
   };
-  
+
+  if (loading) return <div className="p-8 text-center">Loading...</div>;
+  if (!post) return <div className="p-8 text-center">Post not found.</div>;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted py-16">
       <div className="container mx-auto px-4 max-w-3xl">
@@ -105,25 +112,42 @@ function Scene() {
           Back to all posts
         </Link>
         
-        <motion.h1 
-          className="text-3xl md:text-4xl font-bold mb-4 text-primary"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {post.title}
-        </motion.h1>
+        <div className="flex items-center justify-between mb-2">
+          <motion.h1 
+            className="text-3xl md:text-4xl font-bold text-primary"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {post.title}
+          </motion.h1>
+          {post.read_time && (
+            <span className="ml-4 text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full whitespace-nowrap">
+              {post.read_time}
+            </span>
+          )}
+        </div>
+        
+        {/* Tags display */}
+        {Array.isArray(post.tags) && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {post.tags.map((tag: string) => (
+              <span 
+                key={tag} 
+                className="px-3 py-1 text-sm rounded-full bg-primary/10 text-primary"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
         
         <div className="flex items-center mb-8 text-sm text-muted-foreground">
           <span>By {post.author}</span>
           <span className="mx-2">•</span>
-          <span>{new Date(post.date).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-          })}</span>
+          <span>{new Date(post.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
         </div>
-        
+
         <Card className="mb-8 p-0 overflow-hidden bg-card/80 backdrop-blur-sm">
           <div className="h-[300px] w-full">
             <Canvas>
@@ -142,23 +166,7 @@ function Scene() {
           </div>
         </Card>
         
-        <div className="prose prose-invert max-w-none">
-          {post.content.split('\n\n').map((paragraph, idx) => {
-            if (paragraph.startsWith('# ')) {
-              return <h1 key={idx} className="text-2xl font-bold mt-8 mb-4">{paragraph.substring(2)}</h1>;
-            } else if (paragraph.startsWith('## ')) {
-              return <h2 key={idx} className="text-xl font-bold mt-6 mb-3">{paragraph.substring(3)}</h2>;
-            } else if (paragraph.startsWith('```')) {
-              return (
-                <pre key={idx} className="bg-black/30 p-4 rounded-md overflow-x-auto my-4">
-                  <code className="text-sm text-green-400">{paragraph.split('\n').slice(1, -1).join('\n')}</code>
-                </pre>
-              );
-            } else {
-              return <p key={idx} className="mb-4">{paragraph}</p>;
-            }
-          })}
-        </div>
+        <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: marked(post.content || '') }} />
       </div>
     </div>
   );

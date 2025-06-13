@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Sun, Moon, Sparkles, Palette } from 'lucide-react'; // Added theme toggle, sparkles, and palette icon
+import { Menu, X, Sun, Moon, Sparkles, Palette, UserCircle2 } from 'lucide-react'; // Added UserCircle2 icon
 import { useCosmicTheme } from '@/context/CosmicThemeContext';
+import { useAuth } from '@/context/AuthContext';
+import { supabase } from '@/utils/supabaseClient';
 
 const navLinks = [
   { href: '/#about', label: 'About' },
@@ -25,7 +27,13 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
   const [showSparkle, setShowSparkle] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [email, setEmail] = useState('');
   const { theme, nextTheme } = useCosmicTheme();
+  const { user } = useAuth();
+
+  const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
 
   // Theme toggle handler
   useEffect(() => {
@@ -85,6 +93,22 @@ const Navbar = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email !== ADMIN_EMAIL) {
+      alert('Only the admin can log in.');
+      return;
+    }
+    await supabase.auth.signInWithOtp({ email });
+    alert('Check your email for the login link!');
+    setShowLogin(false);
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setShowProfileMenu(false);
+  };
+
   return (
     <nav className="bg-background/80 backdrop-blur-md text-foreground p-4 fixed w-full top-0 z-50 transition-all duration-300 shadow-sm border-b border-border/30">
       <div className="container mx-auto flex justify-between items-center">
@@ -94,11 +118,19 @@ const Navbar = () => {
           onMouseEnter={handleLogoMouseEnter}
           onMouseLeave={handleLogoMouseLeave}
         >
-          <span className="relative">
+          <span className="relative flex items-center gap-2">
             MohdHarish
             {showSparkle && (
               <Sparkles className="absolute -top-4 -right-6 text-accent animate-pulse" size={22} />
             )}
+            {/* Profile/Login Button beside logo */}
+            <button
+              className="rounded-full p-2 hover:bg-card/60 border border-border/30 ml-2"
+              onClick={() => (user ? setShowProfileMenu((v) => !v) : setShowLogin(true))}
+              aria-label="Profile/Login"
+            >
+              <UserCircle2 size={28} />
+            </button>
           </span>
         </Link>
         {/* Desktop Menu */}
@@ -201,6 +233,33 @@ const Navbar = () => {
               );
             })}
           </div>
+        </div>
+      )}
+      {/* Login Modal */}
+      {showLogin && (
+        <div className="absolute right-0 mt-2 bg-background shadow-lg p-4 rounded z-50 border border-border/30">
+          <form onSubmit={handleLogin} className="flex flex-col gap-2">
+            <input
+              type="email"
+              placeholder="Your email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="border p-2 rounded bg-card"
+              required
+            />
+            <button type="submit" className="btn btn-primary">Login</button>
+          </form>
+        </div>
+      )}
+      {/* Profile Dropdown */}
+      {showProfileMenu && user && (
+        <div className="absolute right-0 mt-2 bg-background shadow-lg p-4 rounded z-50 border border-border/30 min-w-[180px]">
+          <div className="mb-2 font-semibold break-all">{user.email}</div>
+          {/* Only show Write Blog for your email */}
+          {user.email === ADMIN_EMAIL && (
+            <Link href="/admin" className="block mb-2 text-primary hover:underline">Write Blog</Link>
+          )}
+          <button onClick={handleLogout} className="text-red-500 mt-2">Logout</button>
         </div>
       )}
     </nav>

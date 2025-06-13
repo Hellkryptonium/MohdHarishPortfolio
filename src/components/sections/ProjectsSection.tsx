@@ -41,6 +41,7 @@ const projects = [
 		title: 'MeAuth',
 		description: 'My personal 2FA authentication app that provides an extra layer of security.',
 		imageUrl: '/assets/images/projects/MeAuth.png',
+		liveLink: 'https://github.com/Hellkryptonium/MeAuth/releases/tag/release-9',
 		sourceLink: 'https://github.com/Hellkryptonium/MeAuth',
 		tags: ['Flutter', 'Dart', 'SHA','AES-256'],
 	},
