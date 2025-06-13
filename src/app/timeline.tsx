@@ -4,37 +4,31 @@ import { motion } from "framer-motion";
 
 const timeline = [
   {
-    year: "2018",
+    year: "2024",
     title: "Started B.Tech in Computer Science",
-    description: "Began my journey in Computer Science at XYZ University.",
+    description: "Began my journey in Computer Science at Galgotias University.",
     type: "education",
   },
   {
-    year: "2020",
-    title: "Internship at Tech Solutions",
-    description: "Worked as a Frontend Developer Intern, building modern web apps.",
+    year: "2024",
+    title: "AICTE Aws and Aandroid App Development Internship",
+    description: "Learned how to build Android apps and integrate AWS services.",
     type: "work",
   },
   {
-    year: "2021",
+    year: "2025",
     title: "Open Source Contributor",
-    description: "Contributed to open-source 3D and web projects on GitHub.",
+    description: "Did my first open source contribution to a project on GitHub.",
     type: "milestone",
   },
   {
-    year: "2022",
-    title: "Graduated & Joined Global Corp",
-    description: "Graduated with honors and joined Global Corp as a Full-Stack Developer.",
+    year: "2025",
+    title: "PulsePay",
+    description: "Made a new payments transaction app that revolutionizes the process.",
     type: "work",
   },
   {
-    year: "2023",
-    title: "Hackathon Winner",
-    description: "Won the Future Tech Challenge for an innovative AI+IoT project.",
-    type: "award",
-  },
-  {
-    year: "2024",
+    year: "2025",
     title: "Launched 3D Portfolio",
     description: "Built and launched this interactive 3D portfolio website!",
     type: "milestone",

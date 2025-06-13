@@ -1,4 +1,5 @@
 "use client";
+import { marked } from "marked";
 import { useEffect, useRef, useState } from "react";
 
 const GITHUB_USERNAME = "Hellkryptonium"; // Change to your GitHub username
@@ -51,7 +52,7 @@ const HACKER_LINES = [
 
 export default function TerminalPage() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState<string[]>(["Welcome to the Mohd Harish Terminal! Type 'help' to get started."]);
+  const [output, setOutput] = useState<(string | JSX.Element)[]>(["Welcome to the Mohd Harish Terminal! Type 'help' to get started."]);
   const [hackerIdx, setHackerIdx] = useState(0);
   const [showHacker, setShowHacker] = useState(false);
   const commits = useLatestCommits(GITHUB_USERNAME);
@@ -73,7 +74,7 @@ export default function TerminalPage() {
 
   function handleCommand(cmd: string) {
     if (cmd === "help") {
-      setOutput((o) => [...o, "Available commands:", "help", "commits", "hacker", "clear"]);
+      setOutput((o) => [...o, "Available commands:", "help", "commits", "hacker", "clear", "readme"]);
     } else if (cmd === "commits") {
       if (commits.length === 0) {
         setOutput((o) => [...o, "Fetching latest commits..."]);
@@ -88,6 +89,17 @@ export default function TerminalPage() {
       setHackerIdx(0);
     } else if (cmd === "clear") {
       setOutput([]);
+    } else if (cmd === "readme") {
+      setOutput((o) => [...o, "Fetching README from GitHub..."]);
+      fetch(`https://raw.githubusercontent.com/Hellkryptonium/Hellkryptonium/main/README.md`)
+        .then((res) => res.ok ? res.text() : Promise.reject("Not found"))
+        .then((text) => {
+          setOutput((o) => [
+            ...o,
+            <div key="readme-md" className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: marked(text) }} />
+          ]);
+        })
+        .catch(() => setOutput((o) => [...o, "Could not fetch README."]));
     } else {
       setOutput((o) => [...o, `Unknown command: ${cmd}`]);
     }
@@ -127,7 +139,7 @@ export default function TerminalPage() {
           />
         </form>
       </div>
-      <div className="mt-4 text-green-300 text-xs opacity-70">Try commands: <span className="font-bold">help</span>, <span className="font-bold">commits</span>, <span className="font-bold">hacker</span>, <span className="font-bold">clear</span></div>
+      <div className="mt-4 text-green-300 text-xs opacity-70">Try commands: <span className="font-bold">help</span>, <span className="font-bold">commits</span>, <span className="font-bold">hacker</span>, <span className="font-bold">clear</span>, <span className="font-bold">readme</span></div>
     </div>
   );
 }
