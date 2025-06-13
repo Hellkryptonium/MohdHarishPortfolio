@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ListVideo } from 'lucide-react';
 
 // Placeholder project data - replace with your actual projects
 const projects = [
@@ -23,6 +23,7 @@ const projects = [
 		title: 'GeoLoc App',
 		description: 'A GeoLocation alarm app that alerts you when you leave a specific area.',
 		imageUrl: '/assets/images/projects/GeoLocApp.png',
+		liveLink: 'https://geolocappweb.netlify.app/',
 		sourceLink: 'https://github.com/Hellkryptonium/GeoLocApp',
 		tags: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
 	},
@@ -41,7 +42,7 @@ const projects = [
 		title: 'MeAuth',
 		description: 'My personal 2FA authentication app that provides an extra layer of security.',
 		imageUrl: '/assets/images/projects/MeAuth.png',
-		liveLink: 'https://github.com/Hellkryptonium/MeAuth/releases/tag/release-9',
+		liveLink: 'https://hellkryptonium.github.io/MeAuth/index.html',
 		sourceLink: 'https://github.com/Hellkryptonium/MeAuth',
 		tags: ['Flutter', 'Dart', 'SHA','AES-256'],
 	},

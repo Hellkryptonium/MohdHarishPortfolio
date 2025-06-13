@@ -27,7 +27,7 @@ const floatingProjects = [
   },
   {
     title: 'GeoLoc App',
-    url: 'https://github.com/Hellkryptonium/GeoLocApp',
+    url: 'https://geolocappweb.netlify.app/',
     position: [3.5, 2.2, 1.5] as [number, number, number],
     color: '#FF6B6B',
     description: 'A GeoLocation alarm app that alerts you when you leave a specific area.',
@@ -41,7 +41,7 @@ const floatingProjects = [
   },
   {
     title: 'MeAuth',
-    url: 'https://github.com/Hellkryptonium/MeAuth',
+    url: 'https://hellkryptonium.github.io/MeAuth/index.html',
     position: [-2.5, 0.5, 4] as [number, number, number],
     color: '#FFD600',
     description: 'My Personal 2FA Authenticator App',
