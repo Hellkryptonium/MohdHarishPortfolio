@@ -194,3 +194,34 @@ Supabase is a great choice for a database with Next.js.
 You’ll have a real database, an admin UI, and can add features like comments/likes.
 You control your content and can update it live!
 Let me know if you want a full code example for the admin UI, authentication, or comments!
+
+
+1. Terminal Enhancements
+More custom commands (e.g., projects, skills, contact, joke, clear)
+Command history and autocomplete
+Animated typing effect for output
+2. Blog Improvements
+Blog post reactions (like, clap, etc.)
+Comments section (with Supabase or third-party)
+Blog post sharing (Twitter, LinkedIn, etc.)
+Estimated reading progress bar
+3. Personalization
+Theme switcher (light/dark/system)
+Customizable 3D mascot with more animations
+Easter eggs (secret commands, hidden pages)
+4. Interactive Visuals
+3D project showcases or interactive demos
+Animated timeline for your journey
+Skills radar or animated charts
+5. Live Features
+Real-time visitor counter or map
+Live chat or Q&A bot
+GitHub activity feed
+6. Professional Touches
+Downloadable resume/CV
+Testimonials carousel
+Certifications and badges
+7. Open Source & Community
+“Sponsor Me” or “Buy Me a Coffee” integration
+Showcase your open source contributions
+Let me know if you want code or design ideas for any of these!
