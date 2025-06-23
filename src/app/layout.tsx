@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 export const metadata = {
-  title: 'Mohd Harish - Full Stack Developer & 3D Artist',
+  title: 'Mohd Harish Portfolio - Full Stack Developer & 3D Artist',
   description: 'The creative portfolio of Mohd Harish, showcasing projects in Next.js, Three.js, and full-stack web development. Explore interactive experiences and blog posts.',
   keywords: ['Mohd Harish', 'Portfolio', 'Full Stack Developer', 'Next.js', 'Three.js', 'React', 'Web Developer'],
   icons: {
