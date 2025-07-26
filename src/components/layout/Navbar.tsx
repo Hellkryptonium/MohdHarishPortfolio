@@ -9,7 +9,7 @@ import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/utils/supabaseClient';
 
 const navLinks = [
-  { href: '/#about', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#skills', label: 'Skills' },
   { href: '/#achievements', label: 'Achievements' },

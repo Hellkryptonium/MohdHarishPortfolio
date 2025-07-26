@@ -3,7 +3,7 @@
 import React, { useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei'; // drei is a helper library for R3F
-import AboutSection from '@/components/sections/AboutSection'; // Updated import
+import HeroSection from '@/components/sections/HeroSection'; // Using Hero instead of About
 import ProjectsSection from '@/components/sections/ProjectsSection'; // Import ProjectsSection
 import SkillsSection from '@/components/sections/SkillsSection'; // Import SkillsSection
 import Main3DScene from '@/components/3d/Main3DScene'; // Import Main3DScene
@@ -62,14 +62,14 @@ const HomePage = () => {
       </div>
       <AnimatePresence mode="wait">
         <motion.div
-          key="about"
+          key="hero"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
           exit="exit"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <AboutSection />
+          <HeroSection />
         </motion.div>
         <motion.div
           key="projects"
