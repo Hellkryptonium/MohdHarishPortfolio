@@ -54,7 +54,6 @@ const HACKER_LINES = [
 const PROJECTS = [
   { name: "Portfolio 3D", url: "https://mohdharish.xyz" },
   { name: "GeoLocApp", url: "https://github.com/Hellkryptonium/GeoLocApp" },
-  { name: "PulsePay", url: "https://github.com/Hellkryptonium/PulsePay" },
 ];
 const SKILLS = ["React", "Next.js", "Three.js", "TypeScript", "Supabase", "TailwindCSS", "Node.js"];
 const JOKES = [

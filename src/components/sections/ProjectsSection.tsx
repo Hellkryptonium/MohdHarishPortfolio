@@ -11,14 +11,6 @@ import { ExternalLink, Github, ListVideo } from 'lucide-react';
 // Placeholder project data - replace with your actual projects
 const projects = [
 	{
-		id: 1,
-		title: 'PulsePay',
-		description: 'A new payments transaction app that revolutionizes the process.',
-		imageUrl: '/assets/images/projects/PulsePay.png', // Fixed: use actual preview image
-		liveLink: 'https://pulsepay-website-23945.web.app/',
-		tags: ['Flutter', 'Dart', 'Firebase', 'Google Cloud'],
-	},
-	{
 		id: 2,
 		title: 'GeoLoc App',
 		description: 'A GeoLocation alarm app that alerts you when you leave a specific area.',

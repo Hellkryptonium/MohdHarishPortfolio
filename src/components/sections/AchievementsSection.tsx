@@ -27,7 +27,7 @@ const achievementsData: Achievement[] = [
   {
     id: 2,
     title: 'Entrepreneur',
-    description: 'Build an amazing payment transfer app called PulsePay, which revolutionizes the payments transaction process.',
+    description: 'Build an amazing payment transfer app called payment applilcation, which revolutionizes the payments transaction process.',
     year: '2025',
     issuer: 'Myself',
     icon: Star,

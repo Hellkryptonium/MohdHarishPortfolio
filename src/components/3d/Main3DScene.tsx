@@ -19,13 +19,6 @@ const HOVER_SOUND = '/assets/sounds/hover.mp3';
 
 const floatingProjects = [
   {
-    title: 'PulsePay',
-    url: 'https://pulsepay-website-23945.web.app/',
-    position: [-4, 1.5, -2] as [number, number, number],
-    color: '#8C52FF',
-    description: 'A new way in the world for payments transaction system.',
-  },
-  {
     title: 'GeoLoc App',
     url: 'https://geolocappweb.netlify.app/',
     position: [3.5, 2.2, 1.5] as [number, number, number],
