@@ -146,9 +146,10 @@ const Main3DScene: React.FC<Main3DSceneProps> = ({ audioRef }) => {
   });
 
   // Draw animated lines between floating projects
+  // Only use valid indices (0-3) since floatingProjects has 4 items
   const projectLinePairs = [
-    [0, 1], [1, 2], [2, 3], [3, 4], [4, 0], // Loop
-    [0, 2], [1, 3], [2, 4], [3, 0], [4, 1] // Criss-cross
+    [0, 1], [1, 2], [2, 3], [3, 0], // Loop
+    [0, 2], [1, 3], [2, 0], [3, 1] // Criss-cross
   ];
 
   // Particle trail state
