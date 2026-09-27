@@ -14,6 +14,7 @@ export default function Experience() {
               <div>
                 <h3 className="text-lg font-semibold">{item.role}</h3>
                 <p className="mt-1 text-muted-foreground">{item.company}</p>
+                {'link' in item && item.link && <a href={item.link} target="_blank" rel="noreferrer" className="mt-3 inline-block text-sm font-medium text-primary hover:text-foreground">Read the SIH post -&gt;</a>}
                 {item.details.length > 0 && <ul className="mt-4 space-y-2 text-sm leading-6 text-muted-foreground">{item.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>}
               </div>
               <p className="font-mono text-xs text-muted-foreground sm:pt-1">{item.period}</p>

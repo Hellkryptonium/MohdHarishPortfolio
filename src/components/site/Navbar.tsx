@@ -7,6 +7,7 @@ const links = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   { href: '/writing', label: 'Writing' },
+  { href: '/#profiles', label: 'Profiles' },
 ];
 
 export default function Navbar() {

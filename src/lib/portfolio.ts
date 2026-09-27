@@ -56,13 +56,14 @@ export const experience = [
   {
     role: 'Senior Web Development Mentor',
     company: 'Galgotias Web Development Club',
-    period: '2025 - Present',
+    period: '2026 - Present',
     details: ['Mentor 100+ students in frontend development, backend engineering, REST APIs, databases, authentication, debugging, and deployment.', 'Guide students through designing, implementing, and deploying full-stack applications.'],
   },
   {
     role: 'Team Lead',
     company: 'Smart India Hackathon 2026',
     period: '2026',
+    link: 'https://lnkd.in/p/dwdKtBcr',
     details: ['Led a six-member engineering team building ThreatTrace.', 'Coordinated architecture, implementation, integration, ML inference, testing, and deployment.', 'Ranked Top 16 in university-level SIH 2026 pre-qualifiers.'],
   },
   {
@@ -89,9 +90,36 @@ export const skillGroups = {
 };
 
 export const achievements = [
-  '582+ LeetCode problems solved',
+  '589 LeetCode problems solved',
   'LeetCode rating: 1662',
   'Codeforces rating: 867',
   'Top 16 SIH 2026 university pre-qualifiers',
   'CodeYourFuture merged open-source contribution',
+];
+
+export const profiles = [
+  {
+    name: 'LeetCode',
+    handle: 'hell_233',
+    detail: '589 solved · Contest rating 1,662',
+    href: 'https://leetcode.com/u/hell_233/',
+  },
+  {
+    name: 'Codeforces',
+    handle: 'Harish999',
+    detail: 'Rating 867 · 118 problems solved',
+    href: 'https://codeforces.com/profile/Harish999',
+  },
+  {
+    name: 'Codolio',
+    handle: 'hellkenick',
+    detail: '806 questions solved · 352 active days',
+    href: 'https://codolio.com/profile/hellkenick',
+  },
+  {
+    name: 'SIH 2026',
+    handle: 'ThreatTrace team lead',
+    detail: 'Top 16 university pre-qualifiers',
+    href: 'https://lnkd.in/p/dwdKtBcr',
+  },
 ];
