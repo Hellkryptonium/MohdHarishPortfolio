@@ -23,14 +23,10 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          // Your custom primary color
-          // DEFAULT: "#8C52FF", // Electric Violet
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
-          // Your custom secondary color
-          // DEFAULT: "#FF6B6B", // Coral Red
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -43,8 +39,6 @@ module.exports = {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-          // Your custom accent color
-          // DEFAULT: "#00F5D4", // Aqua Green
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -54,10 +48,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Your custom colors (ensure they don't conflict or redefine if shadcn uses them)
-        "background-dark": "#0D0D0D", // Jet Black
-        "text-primary": "#E0E0E0", // Light Gray
-        "text-secondary": "#A0A0A0", // Medium Gray
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,15 +64,12 @@ module.exports = {
           to: { height: "0" },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
+      animation: {},
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"], // Ensure --font-sans is defined in globals.css or layout
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 };
 

@@ -1,12 +1,12 @@
 // Admin blog editor page for Mohd Harish
 'use client';
 import { useState, useEffect } from 'react';
-import { useAuth } from '@/context/AuthContext';
+import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { supabase } from '@/utils/supabaseClient';
 import { useRouter } from 'next/navigation';
 import { marked } from 'marked';
 
-export default function AdminBlogPage() {
+function AdminBlogContent() {
   const { user } = useAuth();
   const router = useRouter();
   const [title, setTitle] = useState('');
@@ -113,7 +113,7 @@ export default function AdminBlogPage() {
       setContent('');
       setTags('');
       setReadTime('5 min');
-      setTimeout(() => router.push('/blog'), 1200);
+      setTimeout(() => router.push('/writing'), 1200);
     }
   };
 
@@ -289,5 +289,13 @@ export default function AdminBlogPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function AdminBlogPage() {
+  return (
+    <AuthProvider>
+      <AdminBlogContent />
+    </AuthProvider>
   );
 }

@@ -1,20 +1,21 @@
 import '../styles/globals.css'; // Corrected to relative path
-import { Inter } from 'next/font/google'; // Example font
-import Navbar from '../components/layout/Navbar'; // Changed to relative path
-import Footer from '../components/layout/Footer'; // Changed to relative path
-import SmoothScrollProvider from '@/components/layout/SmoothScrollProvider'; // Added import
-import { CosmicThemeProvider } from "@/context/CosmicThemeContext"; // Added import
-import { AuthProvider } from "@/context/AuthContext";
-import dynamic from "next/dynamic";
-import VisitorCountFloating from '../components/ui/VisitorCountFloating';
+import { Inter } from 'next/font/google';
+import Navbar from '@/components/site/Navbar';
+import Footer from '@/components/site/Footer';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
-const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 export const metadata = {
-  title: 'Mohd Harish Portfolio - Full Stack Developer & 3D Artist',
-  description: 'The creative portfolio of Mohd Harish, showcasing projects in Next.js, Three.js, and full-stack web development. Explore interactive experiences and blog posts.',
-  keywords: ['Mohd Harish', 'Portfolio', 'Full Stack Developer', 'Next.js', 'Three.js', 'React', 'Web Developer'],
+  title: 'Mohd Harish - Software Engineer',
+  description: 'Computer Science student building software across backend engineering, cloud infrastructure, AI, and cybersecurity.',
+  keywords: ['Mohd Harish', 'Software Engineer', 'Backend Engineering', 'Cybersecurity', 'Next.js'],
+  openGraph: {
+    title: 'Mohd Harish - Software Engineer',
+    description: 'Computer Science student building software across backend engineering, cloud infrastructure, AI, and cybersecurity.',
+    url: 'https://mohdharish.xyz',
+    siteName: 'Mohd Harish',
+    type: 'website',
+  },
   icons: {
     icon: '/assets/images/fav-icon.png',
     apple: '/assets/images/fav-icon.png',
@@ -28,20 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} font-sans`}>
-      <body className="flex flex-col min-h-screen bg-background">
-        <CosmicThemeProvider>
-          <AuthProvider>
-            <SmoothScrollProvider navbarOffset={64}> {/* Assuming 64px navbar height */}
-              <Navbar />
-              <main className="flex-grow pt-16"> {/* Add padding-top to avoid overlap with fixed navbar */}
-                {children}
-                <Chatbot />
-              </main>
-              <Footer />
-              <VisitorCountFloating />
-            </SmoothScrollProvider>
-          </AuthProvider>
-        </CosmicThemeProvider>
+      <body className="flex min-h-screen flex-col bg-background">
+        <Navbar />
+        <main className="flex-1 pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );

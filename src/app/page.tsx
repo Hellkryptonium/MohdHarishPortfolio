@@ -1,120 +1,22 @@
-'use client'; // Required for React Three Fiber components
+import Link from 'next/link';
+import ProjectCard from '@/components/portfolio/ProjectCard';
+import Experience from '@/components/portfolio/Experience';
+import Skills from '@/components/portfolio/Skills';
+import { achievements, otherProjects, projects } from '@/lib/portfolio';
 
-import React, { useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei'; // drei is a helper library for R3F
-import HeroSection from '@/components/sections/HeroSection'; // Using Hero instead of About
-import ProjectsSection from '@/components/sections/ProjectsSection'; // Import ProjectsSection
-import SkillsSection from '@/components/sections/SkillsSection'; // Import SkillsSection
-import Main3DScene from '@/components/3d/Main3DScene'; // Import Main3DScene
-import ContactSection from '@/components/sections/ContactSection'; // Import ContactSection
-import AchievementsSection from '@/components/sections/AchievementsSection'; // Import AchievementsSection
-import BackgroundMusic from '../components/layout/BackgroundMusic';
-import CosmicBackground from "@/components/3d/CosmicBackground";
-import { useCosmicTheme } from "@/context/CosmicThemeContext";
-import { AnimatePresence, motion } from 'framer-motion';
-import { useKonamiCode } from "@/hooks/useKonamiCode";
-
-// Section animation variants
-const sectionVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-  exit: { opacity: 0, y: -40, transition: { duration: 0.5, ease: 'easeIn' } },
-};
-
-const HomePage = () => {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const { theme } = useCosmicTheme();
-  const [showEasterEgg, setShowEasterEgg] = useState(false);
-
-  useKonamiCode(() => {
-    setShowEasterEgg(true);
-    setTimeout(() => setShowEasterEgg(false), 5000); // Hide after 5s
-  });
-
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center bg-background text-foreground">
-      {showEasterEgg && (
-        <div className="fixed z-[9999] top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-          <div className="bg-gradient-to-br from-purple-800/80 to-pink-600/80 rounded-3xl shadow-2xl p-8 animate-pulse border-4 border-yellow-400/60">
-            <span className="text-4xl md:text-6xl font-bold text-yellow-300 drop-shadow-lg select-none">
-              ✨ Cosmic Secret Unlocked! ✨
-            </span>
-            <div className="mt-4 text-lg text-white/90 text-center">You found the Konami Code Easter Egg!</div>
-          </div>
-        </div>
-      )}
-      <BackgroundMusic />
-      {/* Place audio element outside Canvas */}
-      <audio ref={audioRef} src="/assets/sounds/hover.mp3" preload="auto" style={{ display: 'none' }} />
-      <div className="relative w-full h-screen">
-        <Canvas camera={{ position: [0, 1, 7], fov: 60 }}> {/* Adjusted camera for better view */}
-          {/* Cosmic animated background with theme colors */}
-          <CosmicBackground colorA={theme.colorA} colorB={theme.colorB} colorC={theme.colorC} />
-          <Main3DScene audioRef={audioRef} /> {/* Replace the cube with Main3DScene */}
-          <OrbitControls 
-            enableZoom={false} // Optional: disable zoom for a cleaner look
-            enablePan={false}  // Optional: disable panning
-            minPolarAngle={Math.PI / 2.5} // Lock vertical rotation to keep focus
-            maxPolarAngle={Math.PI / 2.5}
-          />
-        </Canvas>
-      </div>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key="hero"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <HeroSection />
-        </motion.div>
-        <motion.div
-          key="projects"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <ProjectsSection />
-        </motion.div>
-        <motion.div
-          key="skills"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <SkillsSection />
-        </motion.div>
-        <motion.div
-          key="achievements"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <AchievementsSection />
-        </motion.div>
-        <motion.div
-          key="contact"
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          exit="exit"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <ContactSection />
-        </motion.div>
-      </AnimatePresence>
-      {/* Other sections will go here */}
-    </main>
+    <div className="mx-auto max-w-6xl px-5 lg:px-8">
+      <section className="grid min-h-[calc(100vh-5rem)] content-center gap-10 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+        <div><p className="label mb-7">Mohd Harish / Software Engineer</p><h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.04em] sm:text-7xl">I build software systems across backend engineering, cloud infrastructure, AI, and cybersecurity.</h1><p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">Computer Science student focused on understanding systems deeply and shipping useful, maintainable software.</p><div className="mt-9 flex flex-wrap gap-5 text-sm font-semibold"><Link href="/work" className="bg-foreground px-5 py-3 text-background transition-colors hover:bg-primary">View my work <span aria-hidden="true">-&gt;</span></Link><a href="https://github.com/Hellkryptonium" target="_blank" rel="noreferrer" className="border border-border px-5 py-3 hover:border-foreground">GitHub <span aria-hidden="true">-&gt;</span></a></div></div>
+        <div className="self-end border-l-2 border-primary pl-5 lg:mb-12"><p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">Current status</p><p className="mt-3 max-w-xs text-base leading-7">Currently building Togetherly and mentoring 100+ students in web development.</p></div>
+      </section>
+      <section id="work" className="border-t border-border py-20 sm:py-28"><div className="mb-12 flex items-end justify-between gap-5"><div><p className="label">Selected work</p><h2 className="section-heading">Systems I have built.</h2></div><Link href="/work" className="hidden text-sm font-semibold text-primary hover:text-foreground sm:block">View all work -&gt;</Link></div><ProjectCard project={projects[0]} featured /><div className="mt-16 grid gap-12 md:grid-cols-2"><ProjectCard project={projects[1]} /><ProjectCard project={projects[2]} /></div></section>
+      <Experience /><Skills />
+      <section className="border-t border-border py-20 sm:py-28"><div className="grid gap-10 lg:grid-cols-[0.75fr_1.5fr]"><div><p className="label">Achievements</p><h2 className="section-heading">Proof of consistent practice.</h2></div><ul className="grid gap-4 sm:grid-cols-2">{achievements.map((achievement) => <li key={achievement} className="border-b border-border pb-4 text-lg">{achievement}</li>)}</ul></div></section>
+      <section className="border-t border-border py-20 sm:py-28"><div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"><div><p className="label">Writing</p><h2 className="section-heading">Notes from the work.</h2><p className="mt-4 max-w-lg leading-7 text-muted-foreground">An engineering notebook covering backend systems, cybersecurity, AI, and lessons learned while building.</p></div><Link href="/writing" className="text-sm font-semibold text-primary hover:text-foreground">Read the writing -&gt;</Link></div></section>
+      <section className="border-t border-border py-20 sm:py-28"><p className="label">Other things I&apos;ve built</p><div className="mt-8">{otherProjects.map((project) => <ProjectCard key={project.name} project={project} />)}</div></section>
+      <section className="border-t-2 border-foreground py-20 sm:py-28"><p className="label">Get in touch</p><h2 className="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-6xl">Let&apos;s build something thoughtful.</h2><a href="mailto:harishjs1006@gmail.com" className="mt-8 inline-block text-primary hover:text-foreground">harishjs1006@gmail.com -&gt;</a></section>
+    </div>
   );
-};
-
-export default HomePage;
+}

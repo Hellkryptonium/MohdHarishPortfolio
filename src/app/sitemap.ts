@@ -4,14 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mohdharish.xyz'; // Make sure this is your production URL
 
   // Add your static routes here
-  const staticRoutes = [
-    '/',
-    '/blog',
-    '/mascot',
-    '/terminal',
-    '/timeline',
-    '/skills-radar',
-  ];
+  const staticRoutes = ['/', '/work', '/about', '/writing', '/resume'];
 
   const staticUrls = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
