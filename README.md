@@ -4,11 +4,9 @@ Portfolio V2 is a lightweight Next.js portfolio for Mohd Harish, a software engi
 
 ## Stack
 
-- Next.js 14 App Router
-- React and TypeScript
-- Tailwind CSS
-- Supabase for the writing CMS and admin authentication
-- Markdown rendering with `marked`
+- Next.js 16 App Router with Turbopack
+- React 19 and TypeScript 7
+- Tailwind CSS 4
 
 ## Structure
 
@@ -18,10 +16,10 @@ src/
   components/portfolio Reusable work, experience, and skills components
   components/site      Navigation and footer
   lib/                 Typed portfolio content
-  utils/               Supabase client
+  lib/                 Typed portfolio content and live data fetchers
 ```
 
-Public routes are `/`, `/work`, `/about`, `/writing`, `/writing/[slug]`, and `/resume`. The `/admin` route remains available for authenticated blog management but is not part of the public navigation.
+Public routes are `/`, `/work`, `/about`, and `/resume`.
 
 ## Local development
 
@@ -30,15 +28,7 @@ npm install
 npm run dev
 ```
 
-The public portfolio renders without external services. To use writing, authentication, and the admin CMS, configure:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-NEXT_PUBLIC_ADMIN_EMAIL=your_admin_email
-```
-
-The Supabase client uses safe placeholders during builds when those variables are absent, while CMS requests require a configured project.
+The public portfolio renders without external services. Competitive-programming ratings and recent public GitHub activity are fetched server-side with cached fallbacks.
 
 ## Validation
 

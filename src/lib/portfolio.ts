@@ -23,12 +23,15 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: 'Togetherly',
-    title: 'University networking platform',
-    description: 'University networking platform connecting students through skills, interests, projects, professional profiles, connections, and messaging.',
-    technologies: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-    github: 'https://github.com/Hellkryptonium/Togetherly',
-    highlights: ['PostgreSQL and Redis', 'REST APIs', 'Authentication', 'Networking and messaging', 'Modular monorepo'],
+    name: 'Horizon AI Runtime',
+    title: 'Distributed AI Compute Platform',
+    description: 'A distributed inference platform that connects underutilized computing resources to run AI models through intelligent, resource-aware scheduling.',
+    technologies: ['Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'WebSockets', 'Ollama'],
+    live: 'https://horizonruntimeai.tech/',
+    github: 'https://github.com/Hellkryptonium/horizon-ai-runtime',
+    demo: 'https://youtu.be/3YVfK_uPvJU?si=27Fy0rU4w7kx00s5',
+    highlights: ['Worker registration', 'Resource-aware scheduling', 'Deployment management', 'Remote inference', 'Heterogeneous machine support'],
+    featured: true,
   },
   {
     name: 'PulsePay',
@@ -43,12 +46,12 @@ export const projects: Project[] = [
 
 export const otherProjects: Project[] = [
   {
-    name: 'OpenWallet',
-    title: 'Non-custodial Ethereum wallet',
-    description: 'Non-custodial Ethereum wallet built with Java 17, JavaFX, and Web3j.',
-    technologies: ['Java 17', 'JavaFX', 'Web3j', 'BIP-39', 'Sepolia'],
-    github: 'https://github.com/Hellkryptonium/OpenWallet',
-    highlights: ['Encrypted local key storage', 'ERC-20 and ERC-721 support', 'Transaction signing', 'QR receiving'],
+    name: 'CodeYourFuture',
+    title: 'Open-source curriculum contribution',
+    description: 'Merged open-source contribution improving curriculum documentation with Mermaid diagrams.',
+    technologies: ['Open Source', 'Markdown', 'Mermaid'],
+    github: 'https://github.com/CodeYourFuture/curriculum/pull/1444',
+    highlights: ['Merged pull request', 'Improved technical documentation', 'Open-source collaboration'],
   },
 ];
 
@@ -57,7 +60,7 @@ export const experience = [
     role: 'Senior Web Development Mentor',
     company: 'Galgotias Web Development Club',
     period: '2026 - Present',
-    details: ['Mentor 100+ students in frontend development, backend engineering, REST APIs, databases, authentication, debugging, and deployment.', 'Guide students through designing, implementing, and deploying full-stack applications.'],
+    details: ['Mentor students in frontend, backend, REST APIs, databases, authentication, debugging, and deployment through hands-on technical sessions.', 'Guide students through designing, implementing, and deploying full-stack applications.'],
   },
   {
     role: 'Team Lead',
@@ -70,7 +73,7 @@ export const experience = [
     role: 'Full Stack Developer',
     company: 'SkillYug',
     period: 'Aug 2025 - Oct 2025',
-    details: ['Implemented secure email and OTP authentication using Supabase Authentication and EmailJS.', 'Contributed to Next.js routing and backend integrations.'],
+    details: ['Implemented secure email and OTP authentication using EmailJS.', 'Contributed to Next.js routing and backend integrations.'],
   },
   {
     role: 'Customer Service Executive Intern',
@@ -84,16 +87,16 @@ export const skillGroups = {
   Languages: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript', 'Dart', 'Rust', 'Solidity'],
   'Web & Backend': ['React', 'Next.js', 'Node.js', 'Express.js', 'REST APIs', 'Authentication'],
   Databases: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Firebase', 'Firestore'],
-  'Cloud & Infrastructure': ['Google Cloud', 'AWS', 'Docker', 'Google Pub/Sub', 'Vercel', 'Render', 'Git', 'GitHub'],
-  'AI / Security': ['Machine Learning', 'BERT', 'Phishing Detection', 'ClamAV', 'Cybersecurity', 'Cryptography', 'Secure Authentication'],
+  'Cloud & Infrastructure': ['Google Cloud', 'AWS', 'Docker', 'Firebase Cloud Functions', 'Google Pub/Sub', 'Vercel', 'Render', 'Git', 'GitHub'],
+  'AI / Security': ['Machine Learning', 'BERT', 'Phishing Detection', 'ClamAV', 'Cybersecurity', 'Cryptography'],
   'Core CS': ['Data Structures & Algorithms', 'OOP', 'DBMS', 'Operating Systems', 'Computer Networks', 'Distributed Systems'],
 };
 
 export const achievements = [
-  '589 LeetCode problems solved',
-  'LeetCode rating: 1662',
-  'Codeforces rating: 867',
+  '593+ LeetCode problems solved',
+  'LeetCode rating: 1,749',
   'Top 16 SIH 2026 university pre-qualifiers',
+  'Winner, Bitcoin India Tour 2.0 Quiz Competition',
   'CodeYourFuture merged open-source contribution',
 ];
 
@@ -101,25 +104,26 @@ export const profiles = [
   {
     name: 'LeetCode',
     handle: 'hell_233',
-    detail: '589 solved · Contest rating 1,662',
+    detail: '593+ solved · Contest rating 1,749',
     href: 'https://leetcode.com/u/hell_233/',
-  },
-  {
-    name: 'Codeforces',
-    handle: 'Harish999',
-    detail: 'Rating 867 · 118 problems solved',
-    href: 'https://codeforces.com/profile/Harish999',
-  },
-  {
-    name: 'Codolio',
-    handle: 'hellkenick',
-    detail: '806 questions solved · 352 active days',
-    href: 'https://codolio.com/profile/hellkenick',
   },
   {
     name: 'SIH 2026',
     handle: 'ThreatTrace team lead',
     detail: 'Top 16 university pre-qualifiers',
-    href: 'https://lnkd.in/p/dwdKtBcr',
+    href: 'https://youtu.be/SmNgXueVuFM?si=3wU7Sm6mGRZxfrf3',
   },
+];
+
+export const education = {
+  institution: 'Galgotias University',
+  location: 'Greater Noida, India',
+  degree: 'Bachelor of Technology in Computer Science & Engineering',
+  period: '2024 - 2028',
+  result: 'CGPA: 8.75/10',
+};
+
+export const certifications = [
+  { name: 'GitHub Foundations', href: 'https://www.credly.com/badges/8dcafaa2-3583-4ca0-a069-ff8c4b36edc5/print' },
+  { name: 'AWS Academy Cloud Architecting', href: 'https://drive.google.com/file/d/16cPX8Y9LH9wYKBG3lrrwPao5TB3fzVkI/view?usp=drive_link' },
 ];
